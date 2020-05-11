@@ -12,7 +12,7 @@ namespace Dal
     {
         private string ruta;
 
-        public void ExportarPorCredito(string nombreEntidad, IList<Entidad> entidades)
+        public void ExportarPorEntidad(string nombreEntidad, IList<Entidad> entidades)
         {
             AsignarRuta(nombreEntidad);
             FileStream fileStream = new FileStream(ruta, FileMode.Create);
