@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntidadRepository.cs" />
+    <Compile Include="ExportarRepository.cs" />
+    <Compile Include="Guardado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
