@@ -31,28 +31,8 @@ namespace Bll
             {
                 return "Error de lectura " + E.Message;
             }
-        }
+        }        
         
-        public string Modificar(Entidad entidad)
-        {
-            try
-            {
-                if (creditoRepositorio.Buscar(credito.Identificacion) != null)
-                {
-
-                    creditoRepositorio.Modificar(credito);
-                    return $"Los liquidacion con numero {credito.Identificacion} ha sido modificada satisfacatoriamente";
-                }
-                return $"La liquidacion {credito.Identificacion} no se encuentra registrada por favor verifique los datos";
-
-            }
-            catch (Exception e)
-            {
-
-                return "Error de datos" + e.Message;
-            }
-
-        }
 
         public RespuestaConsulta Consultar()
         {
@@ -60,16 +40,16 @@ namespace Bll
             try
             {
                 respuesta.Error = false;
-                IList<Credito> creditos = creditoRepositorio.Consultar();
-                if (creditos.Count != 0)
+                IList<Entidad> entidades = entidadRepository.Consultar();
+                if (entidades.Count != 0)
                 {
-                    respuesta.Mensaje = "Se Consulta la Informacion de liquidaciones";
-                    respuesta.creditos = creditos;
+                    respuesta.Mensaje = "Se Consulta la Informacion de los pagos de las entidades";
+                    respuesta.entidades = entidades;
                 }
                 else
                 {
-                    respuesta.Mensaje = "No existen Datos para Consultar";
-                    respuesta.creditos = null;
+                    respuesta.Mensaje = "No existen pagos para Consultar";
+                    respuesta.entidades = null;
                 }
 
             }
@@ -77,20 +57,20 @@ namespace Bll
             {
                 respuesta.Error = true;
                 respuesta.Mensaje = $"Error en datos: " + e.Message;
-                respuesta.creditos = null;
+                respuesta.entidades = null;
             }
             return respuesta;
 
         }
 
-        public RespuestaBusqueda Buscar(string identificacion)
+        public RespuestaBusqueda Buscar(string numeroRecibo)
         {
             RespuestaBusqueda respuesta = new RespuestaBusqueda();
             try
             {
                 respuesta.Error = false;
-                Credito credito = creditoRepositorio.Buscar(identificacion);
-                if (credito == null)
+                Entidad entidad = entidadRepository.Buscar(numeroRecibo);
+                if (entidad == null)
                 {
                     respuesta.Mensaje = $"el credito con  {identificacion} no se encuentra registrada";
                     respuesta.credito = null;
