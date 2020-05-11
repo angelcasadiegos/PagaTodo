@@ -1,6 +1,6 @@
 ﻿namespace PagaTodo
 {
-    partial class Form1
+    partial class MenuPrincipalFrm
     {
         /// <summary>
         /// Variable del diseñador necesaria.

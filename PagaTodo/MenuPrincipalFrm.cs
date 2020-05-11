@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PagaTodo
 {
-    public partial class Form1 : Form
+    public partial class MenuPrincipalFrm : Form
     {
-        public Form1()
+        public MenuPrincipalFrm()
         {
             InitializeComponent();
         }
