@@ -28,6 +28,11 @@ namespace PagaTodo
 
         private void ConsultarBtn_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            respuestaConsulta = entidadService.Consultar();
+            PagosRealizados = entidadService.TotalizarEntidades().ToString();
+            TotalRecaudos = entidadService.SumarPagos().ToString();
+            Consultar();
 
         }
 
@@ -44,14 +49,51 @@ namespace PagaTodo
             }
 
             else if (ConsultaEntidadesCmb.SelectedIndex == 1)
-            {
-                nombreEntidad = ConsultaEntidadesCmb.ToString();
-                
-                dataGridView1.DataSource = entidadService.ConsultaPorNombreEntidad(nombreEntidad);
-                PagosRealizados = entidadService.TotalizarPorEntidad(nombreEntidad).ToString();
-                TotalRecaudos = entidadService.SumarPorEntidades(nombreEntidad).ToString();                
+            {                               
+                dataGridView1.DataSource = entidadService.ConsultaPorNombreEntidad(ConsultaEntidadesCmb.Text);
+                PagosRealizados = entidadService.TotalizarPorEntidad(ConsultaEntidadesCmb.Text).ToString();
+                TotalRecaudos = entidadService.SumarPorEntidades(ConsultaEntidadesCmb.Text).ToString();                
             }
-            
+            else if (ConsultaEntidadesCmb.SelectedIndex == 2)
+            {
+                dataGridView1.DataSource = entidadService.ConsultaPorNombreEntidad(ConsultaEntidadesCmb.Text);
+                PagosRealizados = entidadService.TotalizarPorEntidad(ConsultaEntidadesCmb.Text).ToString();
+                TotalRecaudos = entidadService.SumarPorEntidades(ConsultaEntidadesCmb.Text).ToString();
+            }
+            else if(ConsultaEntidadesCmb.SelectedIndex == 3)
+            {
+                dataGridView1.DataSource = entidadService.ConsultaPorNombreEntidad(ConsultaEntidadesCmb.Text);
+                PagosRealizados = entidadService.TotalizarPorEntidad(ConsultaEntidadesCmb.Text).ToString();
+                TotalRecaudos = entidadService.SumarPorEntidades(ConsultaEntidadesCmb.Text).ToString();
+            }
+            else
+            {
+                DateTime fecha = dateTimePicker1.Value.Date;
+                dataGridView1.DataSource = entidadService.ConsultarXFecha(fecha);
+                TotalRecaudos = entidadService.ConsultarXFecha(fecha).Sum(l => l.ValorPagado).ToString();
+                PagosRealizados = entidadService.ConsultarXFecha(fecha).Count().ToString();
+            }
+
+            LLenarCampos();
+
+        }
+
+        private void LLenarCampos()
+        {
+            PagosRealizadosTxt.Text = PagosRealizados;
+            TotalRecaudosTxt.Text = TotalRecaudos;
+        }
+
+        private void ExportarBtn_Click(object sender, EventArgs e)
+        {
+            string Mensaje;
+            string nombreEntidad = ConsultaEntidadesCmb.Text;
+            if (ConsultaEntidadesCmb.SelectedIndex == 1)
+            {
+                nombreEntidad = "Electricaribe";
+            }
+            Mensaje = exportarService.ExportarPorEntidad(nombreEntidad, entidadService.ConsultaPorNombreEntidad);
+            MessageBox.Show(Mensaje);
         }
     }
 }

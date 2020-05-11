@@ -139,6 +139,7 @@
             this.ExportarBtn.TabIndex = 10;
             this.ExportarBtn.Text = "Exportar";
             this.ExportarBtn.UseVisualStyleBackColor = true;
+            this.ExportarBtn.Click += new System.EventHandler(this.ExportarBtn_Click);
             // 
             // ConsultarPagosFrm
             // 

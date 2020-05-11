@@ -30,21 +30,22 @@ namespace PagaTodo
 
         private Entidad MapearEntidad()
         {
-            Entidad entidad = new Entidad();
+            Entidad entidad;
             
             if (NombreEntidadCmb.SelectedIndex == 0)
             {
-                entidad.NombreEntidad = "Electricaribe";
+                entidad = new Entidad();
             }
             else if(NombreEntidadCmb.SelectedIndex==1)
             {
-                entidad.NombreEntidad = "GasCaribe";
+                entidad = new Entidad();
             }
             else
             {
-                entidad.NombreEntidad = "Emdupar";
+                entidad = new Entidad();
             }
 
+            entidad.NombreEntidad = NombreEntidadCmb.Text;
             entidad.NumeroRecibo = NumeroReciboTxt.Text;
             entidad.FechadePago = dateTimePicker1.Value.Date;
             entidad.ValorPagado = decimal.Parse(ValorPagadoTxt.Text);
@@ -57,7 +58,6 @@ namespace PagaTodo
             NombreEntidadCmb.Text = "";
             NumeroReciboTxt.Text = "";
             ValorPagadoTxt.Text = "";
-
         }
     }
 
