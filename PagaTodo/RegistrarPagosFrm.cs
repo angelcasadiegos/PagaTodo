@@ -31,19 +31,18 @@ namespace PagaTodo
         private Entidad MapearEntidad()
         {
             Entidad entidad = new Entidad();
-
-            string nombreEntidad = NombreEntidadCmb.Text;
+            
             if (NombreEntidadCmb.SelectedIndex == 0)
             {
-                nombreEntidad = NombreEntidadCmb.Text;
+                entidad.NombreEntidad = "Electricaribe";
             }
             else if(NombreEntidadCmb.SelectedIndex==1)
             {
-                nombreEntidad = NombreEntidadCmb.Text;
+                entidad.NombreEntidad = "GasCaribe";
             }
             else
             {
-                nombreEntidad = NombreEntidadCmb.Text;
+                entidad.NombreEntidad = "Emdupar";
             }
 
             entidad.NumeroRecibo = NumeroReciboTxt.Text;
