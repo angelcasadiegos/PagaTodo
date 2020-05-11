@@ -27,7 +27,7 @@ namespace Entity
 
         public override string ToString()
         {
-            return $"{NombreEntidad},{NumeroRecibo},{FechadePago},{ValorPagado} ";
+            return $"{NombreEntidad},{NumeroRecibo},{FechadePago},{ValorPagado}";
         }
     }
 }
