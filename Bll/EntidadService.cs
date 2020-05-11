@@ -72,22 +72,46 @@ namespace Bll
                 Entidad entidad = entidadRepository.Buscar(numeroRecibo);
                 if (entidad == null)
                 {
-                    respuesta.Mensaje = $"el credito con  {identificacion} no se encuentra registrada";
-                    respuesta.credito = null;
+                    respuesta.Mensaje = $"el credito con  {numeroRecibo} no se encuentra registrada";
+                    respuesta.entidad = null;
                 }
                 else
                 {
-                    respuesta.credito = credito;
-                    respuesta.Mensaje = "credito encontrad\n\n";
+                    respuesta.entidad = entidad;
+                    respuesta.Mensaje = "recibo encontrado\n\n";
                 }
             }
             catch (Exception E)
             {
                 respuesta.Mensaje = "Error de lectura o escritura de archivos: " + E.Message;
-                respuesta.credito = null;
+                respuesta.entidad = null;
                 respuesta.Error = true;
             }
             return respuesta;
         }
+        public int TotalizarEntidades()
+        {
+            return entidadRepository.TotalizarEntidades();
+        }        
+
+        public decimal SumarEntidades()
+        {
+            return entidadRepository.SumarEntidades();
+        }        
+        public IList<Entidad> ConsultaPorNombreEntidad(string nombreEntidad)
+        {
+            return entidadRepository.ConsultaPorNombreEntidad(nombreEntidad);
+        }
+        public IList<Entidad> ConsultarXFecha(DateTime fechaPago)
+        {
+            return entidadRepository.ConsultarXFecha(fechaPago);
+        }
+
+        
+
+
+
+
+
     }
 }

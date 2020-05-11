@@ -75,16 +75,18 @@ namespace Dal
         public int TotalizarEntidades()
         {
             return entidades.Count();
-        }               
-
+        }
+        public decimal SumarEntidades()
+        {
+            return entidades.Sum(l => l.ValorPagado);
+        }
         public IList<Entidad> ConsultaPorNombreEntidad(string nombreEntidad)
         {
             return entidades.Where(l => l.NombreEntidad.Contains(nombreEntidad)).ToList();
         }
-
-        public IList<Entidad> ConsultarXFecha(DateTime fecha)
+        public IList<Entidad> ConsultarXFecha(DateTime fechaPago)
         {
-            return entidades.Where(l => l.FechadePago.Year.Equals(fecha.Year) && l.FechadePago.Month.Equals(fecha.Month)).ToList();
+            return entidades.Where(l => l.FechadePago.Year.Equals(fechaPago.Year) && l.FechadePago.Month.Equals(fechaPago.Month)).ToList();
         }
         
     }
