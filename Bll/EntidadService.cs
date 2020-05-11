@@ -105,13 +105,6 @@ namespace Bll
         public IList<Entidad> ConsultarXFecha(DateTime fechaPago)
         {
             return entidadRepository.ConsultarXFecha(fechaPago);
-        }
-
-        
-
-
-
-
-
+        }    
     }
 }
