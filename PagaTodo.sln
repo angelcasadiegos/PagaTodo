@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagaTodo", "PagaTodo\PagaTodo.csproj", "{5E109A40-6BA1-4735-A4F6-A27DEE0D7268}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagaTodoGUI", "PagaTodo\PagaTodoGUI.csproj", "{5E109A40-6BA1-4735-A4F6-A27DEE0D7268}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{49EA8736-480F-4642-82D4-D81774DDBD8D}"
 EndProject

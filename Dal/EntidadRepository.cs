@@ -49,12 +49,11 @@ namespace Dal
         {
             string[] datos = linea.Split(';');
             Entidad entidad = new Entidad();
-            string NombeEntidad = datos[0];
-            string NumeroRecibo = datos[1];
-            DateTime FechadePago = DateTime.Parse(datos[2]);
-            decimal ValorPagado = decimal.Parse(datos[3]);
+            entidad.NombreEntidad = datos[0];
+            entidad.NumeroRecibo = datos[1];
+            entidad.FechadePago = DateTime.Parse(datos[2]);
+            entidad.ValorPagado = decimal.Parse(datos[3]);
             return entidad;
-
         }
 
         public Entidad Buscar(string numerorecibo)

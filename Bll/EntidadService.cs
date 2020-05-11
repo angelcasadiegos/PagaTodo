@@ -16,6 +16,7 @@ namespace Bll
         {
             entidadRepository = new EntidadRepository();
         }
+
         public string Guardar(Entidad entidad)
         {
             try
@@ -31,8 +32,7 @@ namespace Bll
             {
                 return "Error de lectura " + E.Message;
             }
-        }        
-        
+        }      
 
         public RespuestaConsulta Consultar()
         {
