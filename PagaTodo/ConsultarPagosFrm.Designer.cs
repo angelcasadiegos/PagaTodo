@@ -61,6 +61,12 @@
             // ConsultaEntidadesCmb
             // 
             this.ConsultaEntidadesCmb.FormattingEnabled = true;
+            this.ConsultaEntidadesCmb.Items.AddRange(new object[] {
+            "Entidades",
+            "Electricaribe",
+            "GasCaribe",
+            "Emdupar",
+            "Por Fecha"});
             this.ConsultaEntidadesCmb.Location = new System.Drawing.Point(33, 28);
             this.ConsultaEntidadesCmb.Name = "ConsultaEntidadesCmb";
             this.ConsultaEntidadesCmb.Size = new System.Drawing.Size(121, 21);
@@ -69,11 +75,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 13);
+            this.label2.Location = new System.Drawing.Point(54, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Entidades";
+            this.label2.Text = "Consultar Por";
             // 
             // dataGridView1
             // 

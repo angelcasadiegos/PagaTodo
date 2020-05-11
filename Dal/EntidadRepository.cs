@@ -75,7 +75,12 @@ namespace Dal
         {
             return entidades.Count();
         }
-        public decimal SumarEntidades()
+        public decimal SumarPagos()
+        {
+            return entidades.Sum(l => l.ValorPagado);
+        }
+
+        public decimal SumarPorEntidades()
         {
             return entidades.Sum(l => l.ValorPagado);
         }

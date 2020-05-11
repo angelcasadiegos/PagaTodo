@@ -16,14 +16,11 @@ namespace PagaTodo
     {
         EntidadService entidadService = new EntidadService();
         RespuestaConsulta respuestaConsulta = new RespuestaConsulta();
-        ExportacionService exportarservice = new ExportacionService();
-
-        string CreditosInscritoss;
-        string CreditosSimples;
-        string CreditosCompuestos;
-        string TotalCreditosGenerales;
-        string TotalCreditosSimples;
-        string TotalCreditosCompuestos;
+        ExportarService exportarService = new ExportarService();
+        string PagosRealizados;
+        string TotalRecaudos;
+        string nombreEntidad;
+        
         public ConsultarPagosFrm()
         {
             InitializeComponent();
@@ -37,21 +34,21 @@ namespace PagaTodo
         private void Consultar()
         {
 
-
-            if (ConsultaSelectedIndex == 0)
+            if (ConsultaEntidadesCmb.SelectedIndex == 0)
             {
-                respuestaConsulta = creditoService.Consultar();
-                dataGridView1.DataSource = respuestaConsulta.creditos;
-                TotalCreditosGenerales = creditoService.SumarCreditos().ToString();
-                TotalCreditosSimples = "0";
-                TotalCreditosCompuestos = "0";
+                respuestaConsulta = entidadService.Consultar();
+                dataGridView1.DataSource = respuestaConsulta.entidades;
+                PagosRealizados = entidadService.TotalizarEntidades().ToString();
+                TotalRecaudos = entidadService.SumarPagos().ToString();             
 
             }
 
-            else if (TipoConsultacmb.SelectedIndex == 1)
+            else if (ConsultaEntidadesCmb.SelectedIndex == 1)
             {
-                dataGridView1.DataSource = creditoService.ListaCreditosSimples();
-                CreditosInscritoss = CreditosSimples;
+                nombreEntidad = ConsultaEntidadesCmb.ToString();
+                
+                dataGridView1.DataSource = entidadService.ConsultaPorNombreEntidad(nombreEntidad);
+                PagosRealizados = entidadService.SumarPorEntidades(nombreEntidad);
                 CreditosCompuestos = "0";
                 TotalCreditosGenerales = "0";
                 TotalCreditosSimples = creditoService.SumarCreditosSimples().ToString();
