@@ -92,16 +92,20 @@ namespace Bll
         public int TotalizarEntidades()
         {
             return entidadRepository.TotalizarEntidades();
-        }     
+        }
+        public int TotalizarPorEntidad(string nombreEntidad)
+        {
+            return entidadRepository.TotalizarPorEntidad(nombreEntidad);
+        }
 
         public decimal SumarPagos()
         {
             return entidadRepository.SumarPagos();
         }        
 
-        public decimal SumarPorEntidades()
+        public decimal SumarPorEntidades(string nombreEntidad)
         {
-            return entidadRepository.SumarPorEntidades();
+            return entidadRepository.SumarPorEntidades(nombreEntidad);
         }
         public IList<Entidad> ConsultaPorNombreEntidad(string nombreEntidad)
         {

@@ -16,5 +16,11 @@ namespace PagaTodo
         {
             InitializeComponent();
         }
+
+        private void registroDePagosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrarPagosFrm registrarPagosFrm = new RegistrarPagosFrm();
+            registrarPagosFrm.Show();
+        }
     }
 }

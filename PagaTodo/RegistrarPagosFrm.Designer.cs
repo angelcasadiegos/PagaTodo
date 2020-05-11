@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.NumeroReciboTxt = new System.Windows.Forms.TextBox();
+            this.ValorPagadoTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.NombreEntidadCmb = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.GuardarBtn = new System.Windows.Forms.Button();
             this.LimpiarBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // NumeroReciboTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.NumeroReciboTxt.Location = new System.Drawing.Point(154, 53);
+            this.NumeroReciboTxt.Name = "NumeroReciboTxt";
+            this.NumeroReciboTxt.Size = new System.Drawing.Size(100, 20);
+            this.NumeroReciboTxt.TabIndex = 0;
             // 
-            // textBox3
+            // ValorPagadoTxt
             // 
-            this.textBox3.Location = new System.Drawing.Point(154, 107);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.ValorPagadoTxt.Location = new System.Drawing.Point(154, 107);
+            this.ValorPagadoTxt.Name = "ValorPagadoTxt";
+            this.ValorPagadoTxt.Size = new System.Drawing.Size(100, 20);
+            this.ValorPagadoTxt.TabIndex = 2;
             // 
             // label1
             // 
@@ -81,17 +81,17 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Valor Pagado";
             // 
-            // comboBox1
+            // NombreEntidadCmb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.NombreEntidadCmb.FormattingEnabled = true;
+            this.NombreEntidadCmb.Items.AddRange(new object[] {
             "Electricaribe",
             "GasCaribe",
             "Emdupar"});
-            this.comboBox1.Location = new System.Drawing.Point(154, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
+            this.NombreEntidadCmb.Location = new System.Drawing.Point(154, 26);
+            this.NombreEntidadCmb.Name = "NombreEntidadCmb";
+            this.NombreEntidadCmb.Size = new System.Drawing.Size(121, 21);
+            this.NombreEntidadCmb.TabIndex = 8;
             // 
             // label4
             // 
@@ -117,6 +117,7 @@
             this.GuardarBtn.TabIndex = 11;
             this.GuardarBtn.Text = "Guardar";
             this.GuardarBtn.UseVisualStyleBackColor = true;
+            this.GuardarBtn.Click += new System.EventHandler(this.GuardarBtn_Click);
             // 
             // LimpiarBtn
             // 
@@ -126,6 +127,7 @@
             this.LimpiarBtn.TabIndex = 12;
             this.LimpiarBtn.Text = "Limpiar";
             this.LimpiarBtn.UseVisualStyleBackColor = true;
+            this.LimpiarBtn.Click += new System.EventHandler(this.LimpiarBtn_Click);
             // 
             // RegistrarPagosFrm
             // 
@@ -136,12 +138,12 @@
             this.Controls.Add(this.GuardarBtn);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.NombreEntidadCmb);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ValorPagadoTxt);
+            this.Controls.Add(this.NumeroReciboTxt);
             this.Name = "RegistrarPagosFrm";
             this.Text = "Registrar Pago";
             this.ResumeLayout(false);
@@ -151,12 +153,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox NumeroReciboTxt;
+        private System.Windows.Forms.TextBox ValorPagadoTxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox NombreEntidadCmb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button GuardarBtn;
